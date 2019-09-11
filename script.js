@@ -236,7 +236,7 @@ class Carte {
             let nom = $("#nameResto").val();
             let moy = $("#starResto").val();
             let noteMoy = `<div> ${nom} <br> Note moyenne : ${moy} </div><br>`;
-            let photo = `<img src="https://maps.googleapis.com/maps/api/streetview?size=100x100&location=${element.lat},${element.lng}&key=AIzaSyDVYlpJGNplPM900JX1YXNDWHiMehTmHDA">`;
+            let photo = `<img src="https://maps.googleapis.com/maps/api/streetview?size=100x100&location=${element.lat},${element.lng}&key=MY_KEY">`;
             let markersRestos = new google.maps.Marker({
                 icon: {
                     path: google.maps.SymbolPath.CIRCLE,
@@ -286,7 +286,7 @@ class Carte {
         let noteMoy = element.rating;
         let nomResto = vm.normalisationString(element.name);
         $(".restaurant").append(`<div id="${nomResto}" class="adress_img_resto"></div>`);
-        $(`#${nomResto}`).append(`<h3>${element.name}</h3>`,`<img src="https://maps.googleapis.com/maps/api/streetview?size=100x100&location=${element.position.latResto},${element.position.lngResto}&key=AIzaSyAoMRAr72uNyjREiQRxabLKkokp0rpDUno"><br>`,`<span id="noteMoy${nomResto}">Note moyenne : ${element.rating}</span><br>`,`<button id="btnVoirAvis${nomResto}" class="voirDetails" type="button">Voir les détails</button><br>`,`<button id="btnCacherAvis${nomResto}" class="cacherDetails" type="button">Cacher les détails</button><br>`);
+        $(`#${nomResto}`).append(`<h3>${element.name}</h3>`,`<img src="https://maps.googleapis.com/maps/api/streetview?size=100x100&location=${element.position.latResto},${element.position.lngResto}&key=MY_KEY"><br>`,`<span id="noteMoy${nomResto}">Note moyenne : ${element.rating}</span><br>`,`<button id="btnVoirAvis${nomResto}" class="voirDetails" type="button">Voir les détails</button><br>`,`<button id="btnCacherAvis${nomResto}" class="cacherDetails" type="button">Cacher les détails</button><br>`);
         $(`#btnCacherAvis${nomResto}`).hide();
         $(`#${nomResto}`).append(`<div id="avis${nomResto}" class="avisResto"></div>`);
         $(`#avis${nomResto}`).append(`<div id="listeAvis${nomResto}" class="listeAvis"></div>`);
@@ -349,7 +349,7 @@ class Carte {
                 let lngRestos = resto[j].position.lngResto;
                 let positionRestos = {lat: latRestos, lng: lngRestos};
                 let noteMoy = `<div> ${resto[j].name} <br> Note moyenne : ${resto[j].rating} </div><br>`;
-                let photo = `<img src="https://maps.googleapis.com/maps/api/streetview?size=100x100&location=${latRestos},${lngRestos}&key=AIzaSyAoMRAr72uNyjREiQRxabLKkokp0rpDUno">`;
+                let photo = `<img src="https://maps.googleapis.com/maps/api/streetview?size=100x100&location=${latRestos},${lngRestos}&key=MY_KEY">`;
                 let markersRests = new google.maps.Marker({
                     icon: {
                         path: google.maps.SymbolPath.CIRCLE,
